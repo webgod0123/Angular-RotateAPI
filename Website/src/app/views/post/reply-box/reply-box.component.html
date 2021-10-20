@@ -1,0 +1,8 @@
+<form #form="ngForm" (submit)="Comment(form)" *ngIf="user_id != null">
+    <input 
+      name="text" rows="2" class="question" id="msg" required autocomplete="off" 
+      #message = 'ngModel'
+      [(ngModel)] = "reply"/>
+    <label for="msg"><span>Leave a comment down below...</span></label>
+    <input type="submit" value="Submit!" />
+  </form>

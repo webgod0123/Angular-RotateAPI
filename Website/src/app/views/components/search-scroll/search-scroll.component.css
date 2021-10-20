@@ -1,0 +1,10 @@
+.padding
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+body, html
+{
+    overflow: scroll;
+}

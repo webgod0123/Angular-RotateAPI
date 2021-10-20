@@ -1,0 +1,73 @@
+
+<app-navbar></app-navbar>
+
+<div class="view" *ngIf="!previewOn">
+  <div class="top">
+    <div class="titleinput">
+        <h1 style="color:red">Create a Rebuttal</h1>
+        <input type="text" name="name" class="title" id="title" placeholder="  Give us a title!" required autocomplete="off" size="50"/>
+    </div>
+    <div class="helpbtns">
+        <button class="fill" (click)="createPost()">Publish</button>
+        <button class="fill" routerLink="/home">Cancel</button>
+    </div>
+  </div>
+
+  <div class="content">
+    <div class="mainContent">
+        
+      <label for="customFile" id="bannerimg" class="custom-file-upload" style="background-image: url({{pic}});" alt="profile picture">
+        <h2>Change Image</h2>
+        <input name="picture" type="file" class="custom-file-input" id="customFile"
+        (change)="onFileChanged($event)" accept=".jpg,.png,.gif" >
+      </label>
+
+      <form [formGroup]="editorForm" (ngSubmit)="onbSubmit">
+        <quill-editor 
+          id="quillEditor" 
+          class="content-editor" 
+          [placeholder]="'Waiting for your precious content...'" 
+          (changed)="changed($event)"
+          formControlName="editor"></quill-editor>
+      </form>
+    </div>
+    <div class="postinfo">
+        <div class="wrapper">
+            <p>TONE?</p>
+            <div class="icon facebook" id="serious" (click)="setSerious()">
+              <div class="tooltip">Serious</div>
+              <span><i class="far fa-frown-open"></i></span>
+            </div>
+            <div class="icon twitter" id="funny" (click)="setFunny()">  
+              <div class="tooltip">Funny</div>
+              <span><i class="far fa-grin-squint-tears"></i></span>
+            </div>
+            <div class="icon instagram" id="formal" (click)="setFormal()">
+              <div class="tooltip">Formal</div>
+              <span><i class="far fa-meh"></i></span>
+            </div>
+            <div class="icon youtube" id="informal" (click)="setInformal()">
+              <div class="tooltip">Informal</div>
+              <span><i class="far fa-grin-tongue-squint"></i></span>
+            </div>
+        </div>
+
+        <div class="topic">
+          <label for="multi-select">Select a Topic:</label>
+          <div class="select select--multiple">
+            <select id="multi-select" multiple>
+              <option 
+              *ngFor="let topic of topics"
+              value="{{topic}}">
+              {{t_names[topic - 1]}}
+              </option>  
+            </select>
+            <span class="focus"></span>
+          </div>
+        </div>
+
+        
+    </div>
+  </div>
+
+</div>

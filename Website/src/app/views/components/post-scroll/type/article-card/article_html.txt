@@ -1,0 +1,34 @@
+
+<a >
+    <div class="blog-card">
+      <div class="meta">
+        <div class="photo" 
+            style="background-image: url({{image_url}})"></div>
+        <ul class="details">
+          <ng-container *ngIf="!loading"><li class="author"><a routerLink="{{router_url}}" >{{user.username}}</a></li></ng-container>
+          <li class="date">{{newDate}}</li>
+          <li class="tags" *ngIf="!own_post">
+            <ul>
+              <li><a routerLink="/create-rebuttal/{{item.postID}}">Rebuttal</a></li>
+              <li *ngIf="topic != null"><a routerLink="/discussion-hub/{{topic.topicID}}">{{topic.topicName}}</a></li>
+              <li *ngIf="item.tone != null"><a href="#">{{item.tone}}</a></li>
+            </ul>
+          </li>
+          <li class="tags" *ngIf="own_post">
+            <ul>
+              <li class="delete"><i class="fas fa-trash" (click)="DeletePost()"></i></li>
+              <li *ngIf="topic != null"><a routerLink="/discussion-hub/{{topic.topicID}}">{{topic.topicName}}</a></li>
+              <li *ngIf="item.tone != null"><a href="#">{{item.tone}}</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <div class="description" routerLink="/p/{{item.postID}}">
+        <h1>{{item.title}}</h1>
+        <h2 routerLink="/u/{{user.username}}">from: {{user.username}}</h2>
+        <div class="bodytext" [innerHTML]="item.body"></div>
+        <div class="readmore">
+          <button class="readmoreBtn">Read More</button>
+        </div>
+      </div>
+    </div> 

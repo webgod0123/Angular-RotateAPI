@@ -1,0 +1,31 @@
+
+<!-- nav bar -->
+<app-navbar></app-navbar>
+<div class="wrapper">
+    <div class="column left">
+        <ul class="settings-list">
+            <li id="edit-user" [ngClass]="{'default' : page!=0, 'current' : page == 0}" (click)="SwitchPage(0)">Edit User</li>
+            <li id="profile" [ngClass]="{'default' : page!=1, 'current' : page == 1}" (click)="SwitchPage(1)">Profile</li>
+            <li id="security" [ngClass]="{'default' : page!=2, 'current' : page == 2}" (click)="SwitchPage(2)">Security</li>
+        </ul>
+    </div>
+    <div class="column middle">
+        <app-edit-user
+            *ngIf="page == 0">
+
+        </app-edit-user>
+        <app-profile
+            *ngIf="page == 1">
+
+        </app-profile>
+        <app-security
+            *ngIf="page == 2">
+
+        </app-security>
+    </div>
+    <div class="column right">
+
+    </div>
+</div>
+<app-footer></app-footer>
+<!-- div group of setting and icons -->

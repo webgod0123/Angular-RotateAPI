@@ -1,0 +1,197 @@
+<div class="cropper"
+    *ngIf="imageChangedEvent != ''">
+
+    <image-cropper
+    [imageChangedEvent]="imageChangedEvent"
+    [maintainAspectRatio]="true"
+    [aspectRatio]="1 / 1"
+    (imageCropped)="imageCropped($event)"
+    format="png"
+    (cropperReady)="cropperReady()"
+    backgroundColor="black"
+    >
+    
+    </image-cropper>
+    <input type="submit" name="submit" id="submit" (click)="onSubmit()" value="Submit">
+    <input type="button" name="exit" id="cancel" class=""(click)="ExitCropping()" value="Exit">
+</div>
+<div class="cropper"
+    *ngIf="bannerChangedEvent != ''">
+
+    <image-cropper
+    [imageChangedEvent]="bannerChangedEvent"
+    [maintainAspectRatio]="true"
+    [aspectRatio]="11 / 1"
+    (imageCropped)="bannerImageCropped($event)"
+    format="png"
+    (cropperReady)="cropperReady()"
+    backgroundColor="black"
+    >
+
+    </image-cropper>
+    <input type="submit" name="submit" id="submit" (click)="onSubmitBanner()" value="Submit">
+    <input type="button" name="exit" id="cancel" class=""(click)="ExitCropping()" value="Exit">
+</div>
+<div class="menu"
+    *ngIf="show_bipart_menu">
+    <div (click)="ToggleBipartMenu(menu_to_show)"
+        class="click-thru">
+
+    </div>
+    <div (click)="ToggleBipartMenu(menu_to_show)"
+        class="click-thru">
+
+    </div>
+    <div class="sub">
+        <app-bipartisan-menu
+            [survey]="survey" *ngIf="survey && menu_to_show == 0">
+            
+        </app-bipartisan-menu>
+        <app-follower-bipart-menu
+            [count]="count"
+            [opp_val]="opp_val"
+            [user_list]="user_list"
+            *ngIf="menu_to_show == 1 && user_list">
+
+        </app-follower-bipart-menu>
+    </div>
+</div>
+<app-navbar></app-navbar>
+<div class="big-container">
+    <div class="container"*ngIf="profile && user">
+        <div class="row">
+            <img src="{{profile.bannerPic}}" alt="" class="banner-pic">
+            <div class="profile-picture">
+                
+                <div class="profile-pic">
+                    <label class="-label" for="file">
+                        <span class="glyphicon glyphicon-camera"></span>
+                        <span>Change Image</span>
+                    </label>
+                    <input id="file" type="file" (change)="onFileChanged($event)" />
+                    
+                    <img src="{{profile.profilePic}}" id="output" width="200" />
+                    
+                   
+                    <!-- <i class="fa fa-plus"></i> -->
+                </div>
+            </div>
+            <div class="profile-details">
+                
+                <div class="user-details">
+                    <h1>{{user.displayName}}</h1>
+                    
+                    <span class="username">@{{user.username + ((profile.pronouns) ? '     |' : '')}}</span>
+
+                    <span *ngIf="profile.pronouns!=null" class="pronouns">     {{profile.pronouns}}</span>
+                    <div class="row set-icon-edit">
+                        <p>
+                           {{profile.bio}}
+                        </p>
+                    </div>
+                    <p>
+                        {{sideText}}
+                    </p>
+                </div>
+                <div class="profile-pic2">
+                    <label class="banner-add" for="file2">
+                        <span>
+                            <i class="fas fa-plus"></i>
+                        </span>
+                    </label>
+                    <input id="file2" type="file" (change)="onBannerChanged($event)" />
+                </div>
+            </div>
+            <div class="div-followers">
+                <a class="btn-follow" (click)="LogOutUser()">Log Out?</a>
+                <p class="followers-count">{{count}} Followers</p>
+                <div class="icons-followers">
+                    <i class="fa fa-users" (click)="ToggleBipartMenu(0)"></i>
+                    <i class="fa fa-ellipsis-h"></i>
+                </div>
+                <a (click)="ToggleBipartMenu(1)"  [ngStyle]="{'visibility': count ? 'visible' : 'hidden'}">
+                    <div class="bipartisan">
+                        <mwl-gauge
+                            [max]="100"
+                            [dialStartAngle]="150"
+                            [dialEndAngle]="30"
+                            [value]="bipart_val"
+                            [animated]="true"
+                            [animationDuration]="1"
+                            class="bipart"
+                            >
+                        </mwl-gauge>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="profile---tab" *ngIf="!user.private">
+           <div class="column left">
+                <ul id="accordion" class="accordion">
+                    <li>
+                        <span>
+                            <div 
+                                [ngClass]="{'article' : current_type == 0, 'link' :current_type != 0}"
+                                (click)="ChangeType(0)">
+                                <i class="fas fa-pen-square"></i>
+                                POSTS
+                            </div>
+                        </span>
+                    </li>
+                    <li>
+                        <div 
+                            [ngClass]="{'rebuttal' : current_type == 1, 'link' :current_type != 1}"
+                            (click)="ChangeType(1)">
+                            <i class="fas fa-exclamation-circle"></i>
+                            REBUTTALS
+                        </div>
+                        
+                    </li>
+                    <li>
+                        <div 
+                            [ngClass]="{'comment' : current_type == 2, 'link' :current_type != 2}"
+                            (click)="ChangeType(2)">
+                            <i class="fas fa-comments"></i>
+                            COMMENTS
+                        </div>
+                    </li>
+                </ul>
+           </div>
+           <div class="column middle">
+               <app-posts-user
+                    [spinner]="spinner"
+                    [userID]="userID"
+                    *ngIf="current_type ==  0"
+                    >
+               </app-posts-user>
+               <app-rebuttals-user
+                    [spinner]="spinner"
+                    [userID]="userID"
+                    *ngIf="current_type ==  1"
+                    >
+               </app-rebuttals-user>
+               <app-comments-user
+                    [spinner]="spinner"
+                    [userID]="userID"
+                    *ngIf="current_type ==  2"
+                    >
+
+               </app-comments-user>
+           </div>
+           <div class="column right">
+
+           </div>
+        </div>
+        <div class="row" *ngIf="user.private">
+            <h4 style="color:white; display: flex; justify-content: center; padding: 150px;">You cannot view this user's posts.</h4>
+        </div>
+</div>
+
+<ngx-spinner
+    size = "default"
+    bdOpacity = 0.9
+    [fullScreen] = "true"
+    type = "ball-pulse-sync">
+</ngx-spinner>

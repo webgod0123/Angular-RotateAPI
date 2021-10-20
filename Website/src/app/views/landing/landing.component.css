@@ -1,0 +1,93 @@
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #282829;
+
+}
+
+
+
+  
+h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: larger;
+    margin: 0;
+    transform: translate(0%, 395px);
+}
+
+h2 {
+    color: #ffffff;
+    font-size: 40px;
+    font-weight: 600;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.norm-menu {
+    display: grid;
+    position: absolute;
+    top: 20vh;
+    left: 44vw;
+    background-color: transpare;
+}
+
+.scene {
+    display: flex;
+    justify-content: left;
+    background: no-repeat center  url('../../../assets/img/pa_landing3.png');
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-size: 100vh;
+  }
+
+  .buttons {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      font-family: mon;
+  }
+
+.signup-but
+{
+    border-radius: 50px;
+    border: 1px solid #3a4ea2;
+    background-color: #445dc9;
+    text-align: center;
+    font-weight: bolder;
+    color: white;
+    margin: 10px 0px;
+    padding: 10px 100px;
+    width: 70%;
+    font-family: 'Montserrat', sans-serif;    
+    display: block;
+    /* font-size: 50px; */
+}
+.signup-but:hover{
+    background-color: #0475ba;
+    transition:  .15s ease-in-out;
+}
+
+/* For the login button */
+.login-but
+{
+    border-radius: 50px;
+    border: 1px solid #3a4ea2;
+    background-color: #3a4ea2;
+    text-align: center;
+    font-weight: bolder;
+    color: white;
+    margin: 10px 0px;
+    padding: 10px 100px;
+    width: 70%;
+    font-family: 'Montserrat', sans-serif;
+    display: block;
+    /* font-size: 50px; */
+}
+.login-but:hover{
+    background-color: #1c293d;
+    transition:  .15s ease-in-out;
+}
+

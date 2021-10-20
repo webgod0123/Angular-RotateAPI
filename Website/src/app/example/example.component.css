@@ -1,0 +1,19 @@
+*{
+color: white;
+
+}
+
+.wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.shoe{
+    display: flex;
+    flex-direction: column;
+}
+
+.margins {
+    margin: 20px;
+    width: 100%;
+}

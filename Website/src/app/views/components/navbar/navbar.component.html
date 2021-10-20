@@ -1,0 +1,41 @@
+  
+<div class="custom-container">
+  <div class="my-row">
+    <!-- Logo Set -->
+    <div class="logo-div">
+      <img routerLink="/home" src="https://devblobstorageper.blob.core.windows.net/images/default/Perspective-02.png">
+    </div>
+    <!-- Search Bar -->
+    <div class="search-container-nav">
+            <div class="search-box">
+                <input type="text" placeholder="Search anything" class="search-input"
+                  name="search" #search="ngModel"
+                  [(ngModel)]="searchS"
+                  (keydown.enter)="Search()">
+                  <a type="button" (click)="Search()" class="search-btn" *ngIf="search">
+                    <i  class="fa fa-search"></i>
+                  </a>
+              </div>     
+          </div>
+      <!-- Navigation -->
+    <div class="navbar">
+        <a routerLink="/createpost">Create Post</a>
+        <div class="dropdown"[ngClass]="{'open' : dropdown_hover, '':!dropdown_hover}">
+          <button class="dropbtn" (mouseover)="ToggleHover()" (mouseout)="ToggleHover()"
+            routerLink="/profile">
+              Profile
+              <i class="fa fa-caret-down"></i>
+          </button>
+          <ul class="dropdown-content"
+          #dropdowncontent
+          (mouseover)="ToggleHover()" (mouseout)="ToggleHover()"
+          [style.height.px]="dropdown_hover ? dropdowncontent.scrollHeight : 0">
+              <li><a (click)="LogOutUser()">Log Out</a></li>
+              <li><a routerLink="/message-landing">Messages</a></li>
+          </ul>
+        </div>
+        <a routerLink="/settings">Settings</a>
+        <a routerLink="/bugreport" title="report a bug!" ><i class="fas fa-bug"></i></a>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,60 @@
+
+  <div class="temp_1">
+    <div class="body-section-home">
+      <!-- Card Design -->
+      <div class="custom-card">
+          <div class="block" [ngStyle]="{'background-image' : 'url(' + image_url + ')'}">
+              <!-- Overlay Background on hover -->
+              <div class="overlay"></div>
+              <div class="block--text">
+                  <div class="text--head" routerLink="{{router_url}}">By: {{user.username}}</div>
+                  <div class="text--quote" *ngIf="own_post">
+                      <p *ngIf="item.tone != null"><a href="#">{{item.tone}}</a></p>
+                      <p>{{newDate}} <i id="icon" class="fas fa-trash" (click)="DeletePost()"></i></p>
+                      <p *ngIf="topic != null"><a routerLink="/discussion-hub/{{topic.topicID}}">{{topic.topicName}}</a></p>
+                      <p><a routerLink="/createrebuttal">Create Rebuttal?</a></p>
+                    <!-- CHANGED REBUTTAL LINK HERE /create-rebuttal/{{item.postID}}. -->
+
+<!-- <a>
+    <div class="blog-card">
+      <div class="meta">
+        <div class="photo" 
+            style="background-image: url({{image_url}})"></div>
+        <ul class="details">
+          <ng-container *ngIf="!loading"><li class="author"><a routerLink="{{router_url}}" >{{user.username}}</a></li></ng-container>
+          <li class="date">{{newDate}}</li>
+          <li class="tags" *ngIf="!own_post">
+            <ul>
+              <li><a routerLink="/create-rebuttal/{{item.postID}}">Rebuttal</a></li>
+              <li *ngIf="topic != null"><a routerLink="/discussion-hub/{{topic.topicID}}">{{topic.topicName}}</a></li>
+              <li *ngIf="item.tone != null"><a href="#">{{item.tone}}</a></li>
+              <li><a href="#">CSS</a></li>
+            </ul>
+          </li>
+          <li class="tags" *ngIf="own_post">
+            <ul>
+              <li class="delete"><i class="fas fa-trash" (click)="DeletePost()"></i></li>
+              <li *ngIf="topic != null"><a routerLink="/discussion-hub/{{topic.topicID}}">{{topic.topicName}}</a></li>
+              <li *ngIf="item.tone != null"><a href="#">{{item.tone}}</a></li>
+              <li><a href="#">CSS</a></li>
+            </ul>
+          </li>
+        </ul> -->
+                  </div>
+                  <div class="text--quote" *ngIf="!own_post">
+                    <p *ngIf="item.tone != null"><a href="#">{{item.tone}}</a></p>
+                    <p>{{newDate}}</p>
+                    <p *ngIf="topic != null"><a routerLink="/discussion-hub/{{topic.topicID}}">{{topic.topicName}}</a></p>
+                    <p><a routerLink="/createrebuttal">Create Rebuttal?</a></p>
+                    <!-- CHANGED REBUTTAL LINK HERE /create-rebuttal/{{item.postID}}. -->
+                </div>
+              </div>
+          </div>
+          <div class="block-text" routerLink="/p/{{item.postID}}">
+              <h1>{{item.title}}</h1>
+              <div class="bodytext" [innerHTML]="item.body"></div>
+              <a class="btn-read-more"> Read More</a>
+          </div>
+      </div>
+  </div>
+</div>

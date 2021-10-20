@@ -1,0 +1,34 @@
+
+
+<div class="padding" *ngIf="!loading">
+    <app-article-card
+      [item]="item"
+      [user]="user"
+      [topic]="topic"
+      *ngIf="item.type == 'Article'"
+      >
+    </app-article-card>
+
+    <app-discussion-card
+      [item]="item"
+      [user]="user"
+      [topic]="topic"
+      *ngIf="item.type == 'Discussion'"
+      >
+    </app-discussion-card>
+
+    <app-rebuttal-card
+      [item]="item"
+      [user]="user"
+      [topic]="topic"
+      *ngIf="item.type == 'Rebuttal'"
+      >
+    </app-rebuttal-card>
+    
+    <app-comment-card
+      [item]="item"
+      [user]="user"
+      *ngIf="item.type == 'Comment'"
+      >
+    </app-comment-card>
+</div>

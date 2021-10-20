@@ -1,0 +1,16 @@
+*
+{
+    color: white;
+}
+.item
+{
+    display: flex;
+    margin-left: 10%;
+    justify-content: left;
+    align-items: center;
+    padding-right: 10%;
+}
+mwl-gauge
+{
+    margin-right: 5%;
+}

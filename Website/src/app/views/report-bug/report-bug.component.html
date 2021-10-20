@@ -1,0 +1,37 @@
+<div class="wrapper">
+    <div>
+        <!-- column 1 -->
+    </div>
+    <div> <!-- column 2 -->
+        <form>
+            <h1>Tell us about your Experience!</h1>
+            <h5>Report a bug, or give us your input</h5>
+            <hr class="sep" />
+            <div class="group">
+                <input id="Name" type="text" required="required" />
+                <span class="highlight"></span>
+                <span class="bar"></span>
+                <label>Your Name</label>
+            </div>
+            <div class="group">
+                <input id="Email" type="text" required="required" />
+                <span class="highlight"></span>
+                <span class="bar"></span>
+                <label>Email</label>
+            </div>
+            <div class="group">
+                <textarea id="message" type="textarea" rows="5" required="required"></textarea>
+                <span class="highlight"></span>
+                <span class="bar"></span>
+                <label>Message</label></div>
+            <div class="btn-box">
+                <button class="btn btn-cancel" type="button" routerLink="/home">cancel</button>
+                <button class="btn btn-submit" type="submit" (click)="OnSubmit()">submit</button>
+            </div>
+        </form>
+    </div>
+    <div>
+        <!-- column 3 -->
+    </div>
+
+</div>

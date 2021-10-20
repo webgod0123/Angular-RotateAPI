@@ -1,0 +1,31 @@
+<div class="main">
+    <form class="needs-validation" novalidate #form="ngForm" (ngSubmit)="SubmitSecure(form)" *ngIf="user">
+        <div class="mb-3">
+            <label for="exampleInputPassword0" class="form-label">Old Password</label>
+            <input type="password" class="form-control" 
+              name="test" #test="ngModel" [(ngModel)]="security.OldPassword"
+              required  maxlength="70" minlength="8"
+              required [class.invalid]="(test.invalid && test.touched)"
+              >
+          </div>
+        <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">New Password</label>
+            <input type="password" class="form-control" 
+              name="hash" #hash="ngModel" [(ngModel)]="security.NewPassword"
+              maxlength="70" minlength="8"
+              [class.invalid]="(hash.invalid && hash.touched) || (hashConfirm.value != hash.value && hash.touched)"
+              >
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputPassword2" class="form-label">Confirm New Password</label>
+            <input type="password" class="form-control" 
+              name="hashConfirm" #hashConfirm="ngModel" [(ngModel)]="confirm"
+              maxlength="70" minlength="8"
+              [class.invalid]="(hashConfirm.invalid && hashConfirm.touched) || (hashConfirm.value != hash.value && hashConfirm.touched)">
+          </div>
+          <button type="submit" class="btn btn-primary" style="float: right" [disabled]="form.invalid || 
+                          (hashConfirm.value != hash.value 
+                          && hash.value != null
+                          && hashConfirm.value!=null)">Submit</button>
+    </form>
+</div>

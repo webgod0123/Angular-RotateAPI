@@ -1,0 +1,34 @@
+.body
+{
+    overflow: hidden;
+}
+.card
+{
+    background-color: var(--darker-grey);
+    border-radius: 20px;
+    padding: 10px;
+}
+.post-title
+{
+    font-size: 20px;
+    margin-left: 10px;
+}
+*
+{
+    color: var(--text-color);
+}
+.top
+{
+    display: flex;
+    align-items: center;
+}
+.discussion
+{
+    margin-top: 15px;
+    margin-left: -157px;
+    color: #778899d8;
+}
+.container
+{
+    cursor: pointer;
+}

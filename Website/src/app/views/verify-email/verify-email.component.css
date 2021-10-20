@@ -1,0 +1,23 @@
+
+h1, h2, p
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--text-color);
+}
+img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30vh;
+    height: 200px;
+    width: 200px;    
+}
+.verify
+{
+    display: flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items: center;
+}

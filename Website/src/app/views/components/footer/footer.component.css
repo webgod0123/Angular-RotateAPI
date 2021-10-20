@@ -1,0 +1,81 @@
+*{
+    font-family: 'Roboto';
+}
+
+html{
+    height: 100%;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 20px  20px;
+    background-color: transparent;
+    max-height: 100px;
+    overflow: hidden;
+    margin-top: auto;
+    z-index: 20;
+}
+
+li{
+    color: white;
+}
+
+ul{
+    display: flex;
+    list-style: inline;
+    list-style-type: none;
+    font-size: 14px;
+    max-height: 100px;
+}
+
+a{
+    text-decoration: none;
+}
+
+.button {
+    background-color: transparent;
+    border: none;
+    color: white;
+    padding: 7px 14px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+.button:hover {
+    color:  black;
+}
+
+footer .cc{
+    font-size: 10px;
+    display: flex; 
+    align-items: center;
+    overflow: hidden;
+    color: white;
+}
+
+footer .Perspective{
+    position: relative;
+    display: flex;
+    width: 120px;
+    height: 120px;
+    left: 20px;
+    bottom: 10px;
+}
+
+footer .container{
+    display: flex;
+    overflow: hidden;
+}

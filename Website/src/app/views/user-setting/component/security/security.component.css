@@ -1,0 +1,12 @@
+*
+{
+    color : var(--text-color);
+}
+input
+{
+    color: var(--darker-grey);
+}
+.check
+{
+    margin-left: 10px;
+}

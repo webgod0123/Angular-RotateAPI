@@ -1,0 +1,32 @@
+<app-navbar></app-navbar>
+<div class="wrapper">
+    <div class="shove">
+        <div>
+
+        </div>
+        <h1 *ngIf="topic">{{topic.topicName}}</h1>
+        <div>
+            <button [ngClass]="followed ? 'unfollow' : 'follow'" 
+            id="follow_but" 
+            (click)="FollowUnfollow()">
+            <span>
+                {{follow_but_txt}}
+            </span>
+        </button>
+        </div>
+    </div>
+    <div class="list top"
+        infiniteScroll
+        (scrolled)="OnScroll()"
+        (scrolledIndexChange)="OnScroll()"
+        *ngIf="!loading"
+        >
+        <ul class="list">
+            <li *ngFor="let item of display_posts">
+                <app-post-scroll
+                    [item]="item">
+                </app-post-scroll>
+            </li>
+        </ul>
+    </div>
+</div>

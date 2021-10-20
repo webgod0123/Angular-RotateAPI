@@ -1,0 +1,10 @@
+cdk-virtual-scroll-viewport {
+    height: 70vh;
+    scrollbar-width: none;
+  }  
+  h1
+  {
+    display: flex;
+    justify-content: center;
+    color:var(--text-color);
+  }

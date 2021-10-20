@@ -1,0 +1,224 @@
+<form autocomplete="off" novalidate #form="ngForm" (submit)="OnSubmit(form)">
+  <input name="input1"
+    #input1="ngModel"
+    [(ngModel)]="question_arr[0]" 
+    id="input-1" 
+    type="text" 
+    pattern="1|2|3|4|5" 
+    required [class.invalid]="input1.invalid && input1.touched"
+    autofocus 
+    />
+  <label for="input-1">
+    <span class="label-text">
+      On a scale from 1-5, 1 being least and 5 being most, How important do you think climate change is for legislative priority in Congress?
+    </span>
+    <span class="nav-dot"></span>
+    <div class="signup-button-trigger">Ready?</div>
+  </label>
+  <input name="input2" 
+    id="input-2"
+    #input2="ngModel"
+    [(ngModel)]="question_arr[1]"  
+    type="text" 
+    pattern="1|2|3|4|5"
+    required [class.invalid]="input2.invalid && input2.touched"
+    />
+  <label for="input-2">
+    <span class="label-text">
+      On a scale from 1-5, 1 being least and 5 being most, how sensationalized is climate change in mainstream American media?    
+    </span>
+    <span class="nav-dot"></span>
+  </label>
+  <input 
+    name="input3"
+    #input3="ngModel"
+    [(ngModel)]="question_arr[2]"  
+    id="input-3" 
+    type="text" 
+    pattern="1|2|3|4|5"
+    required [class.invalid]="input3.invalid && input3.touched"
+    />
+  <label for="input-3">
+    <span class="label-text">
+      On a scale from 1-5, 1 being least and 5 being most, how politicized do you think climate change has become in the past 3 decades?    
+    </span>
+    <span class="nav-dot"></span>
+  </label>
+  <input name="input4" 
+    #input4="ngModel"
+    [(ngModel)]="question_arr[3]" 
+    id="input-4" 
+    type="text" 
+    pattern="1|2|3|4|5"
+    required [class.invalid]="input4.invalid && input4.touched"
+    />
+  <label for="input-4">
+    <span class="label-text">
+      On a scale from 1-5, 1 being most open and 5 being most closed, how regulated do you think the U.S. borders should be?
+    </span>
+    <span class="nav-dot"></span>
+  </label>
+  <input name="input5"
+    #input5="ngModel"
+    [(ngModel)]="question_arr[4]"  
+    id="input-5" 
+    type="text"  
+    pattern="1|2|3|4|5" 
+    required [class.invalid]="input5.invalid && input5.touched"
+    />
+  <label for="input-5">
+    <span class="label-text">
+      On a scale from 1-5, 1 being least and 5 being most, how much do you think illegal immigration stimulates the economy?
+    </span>
+    <span class="nav-dot"></span>
+  </label>
+
+
+  <input name="input6"
+    #input6="ngModel"
+    [(ngModel)]="question_arr[5]"  
+    id="input-6" 
+    type="text" 
+    pattern="1|2|3|4|5"
+    required [class.invalid]="input6.invalid && input6.touched"
+    />
+  <label for="input-6">
+    <span class="label-text">
+      On a scale from 1-5, 1 being least and 5 being most, how much does an open border policy contribute to national crime?    
+    </span>
+    <span class="nav-dot"></span>
+  </label>
+  <input name="input7"
+    #input7="ngModel"
+    [(ngModel)]="question_arr[6]"  
+    id="input-7" 
+    type="text" 
+    pattern="1|2|3|4|5"  
+    required [class.invalid]="input7.invalid && input7.touched"
+    />
+  <label for="input-7">
+    <span class="label-text">
+      On a scale from 1-5, 1 being strongly no and 5 being strongly yes, should the U.S. military continue to strengthen itself?    
+    </span>
+    <span class="nav-dot"></span>
+  </label>
+  <input name="input8" 
+    #input8="ngModel"
+    [(ngModel)]="question_arr[7]" 
+    id="input-8" 
+    type="text" 
+    pattern="1|2|3|4|5"  
+    required [class.invalid]="input8.invalid && input8.touched"
+    />
+  <label for="input-8">
+    <span class="label-text">
+      On a scale from 1-5, 1 being strongly no and 5 being strongly yes, should America focus more on international and domestic security rather than environmental problems for future consideration?
+    </span>
+    <span class="nav-dot"></span>
+  </label>
+  <input name="input9"
+    #input9="ngModel"
+    [(ngModel)]="question_arr[8]"  
+    id="input-9" 
+    type="text" 
+    pattern="1|2|3|4|5"  
+    required [class.invalid]="input9.invalid && input9.touched"
+    />
+  <label for="input-9">
+    <span class="label-text">
+      On a scale from 1-5, 1 being strongly no and 5 being strongly yes, should the military budget be one of the top priorities for the American budget?
+    </span>
+    <span class="nav-dot"></span>
+  </label>
+  <input name="input10"
+    #input10="ngModel"
+    [(ngModel)]="question_arr[9]"  
+    id="input-10" 
+    type="text" 
+    pattern="1|2|3|4|5"
+    required [class.invalid]="input10.invalid && input10.touched"
+    />
+  <label for="input-10">
+    <span class="label-text">
+      On a scale from 1-5, 1 being strongly no and 5 being strongly yes, how much do you support the Biden Administration's infrastructure plan?    
+    </span>
+    <span class="nav-dot"></span>
+  </label>
+
+
+  <input name="input11"
+    #input11="ngModel"
+    [(ngModel)]="question_arr[10]"  
+    id="input-11" 
+    type="text" 
+    pattern="1|2|3|4|5" 
+    required [class.invalid]="input11.invalid && input11.touched"
+    />
+  <label for="input-11">
+    <span class="label-text">
+      On a scale from 1-5, 1 being strongly no and 5 being strongly yes, does the United States need to pass the infrastructure bill to encourage economic growth?    
+    </span>
+    <span class="nav-dot"></span>
+  </label>
+  <input name="input12"
+    #input12="ngModel"
+    [(ngModel)]="question_arr[11]"  
+    id="input-12" 
+    type="text" 
+    pattern="1|2|3|4|5"  
+    required [class.invalid]="input12.invalid && input12.touched"
+    />
+  <label for="input-12">
+    <span class="label-text">
+      On a scale from 1-5, 1 being strongly no and 5 being strongly yes, should abortion be legalized throughout the United States?    
+    </span>
+    <span class="nav-dot"></span>
+  </label>
+  <input name="input13"
+    #input13="ngModel"
+    [(ngModel)]="question_arr[12]"    
+    id="input-13" 
+    type="text" 
+    pattern="1|2|3|4|5" 
+    required [class.invalid]="input13.invalid && input13.touched"
+    />
+  <label for="input-13">
+    <span class="label-text">
+      On a scale from 1-5, 1 being strongly no and 5 being strongly yes, is the act of aborting a fetus morally wrong?    
+    </span>
+    <span class="nav-dot"></span>
+  </label>
+  <input name="input14"
+    #input14="ngModel"
+    [(ngModel)]="question_arr[13]"  
+    id="input-14" 
+    type="text" 
+    pattern="1|2|3|4|5" 
+    required [class.invalid]="input14.invalid && input14.touched"
+    />
+  <label for="input-14">
+    <span class="label-text">
+      On a scale from 1-5, 1 being strongly no and 5 being strongly yes, is the act of aborting a fetus impermissible?    
+    </span>
+    <span class="nav-dot"></span>
+  </label>
+  <input name="input15"
+    #input15="ngModel"
+    [(ngModel)]="question_arr[14]"  
+    id="input-15" 
+    type="text" 
+    pattern="1|2|3|4|5" 
+    required [class.invalid]="input15.invalid && input15.touched"
+    />
+  <label for="input-15">
+    <span class="label-text">
+      On a scale from 1-5, 1 being strongly no and 5 being strongly yes, does the fetus take priority over the mother’s control of her own body?    
+    </span>
+    <span class="nav-dot"></span>
+  </label>
+
+  <button type="submit" [disabled]="form.invalid" (click)="OnSubmit(form)">Submit your answers!</button>
+<p class="tip">Please answer 1, 2, 3, 4, or 5. Press Tab to continue.</p> 
+  <div class="signup-button" >Ready?</div>
+</form>
+

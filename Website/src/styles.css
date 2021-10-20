@@ -1,0 +1,113 @@
+@import '~quill/dist/quill.core.css';
+@import '~quill/dist/quill.bubble.css';
+@import '~quill/dist/quill.snow.css';
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400&display=swap');
+/* You can add global styles to this file, and also import other style files */
+
+* {
+  box-sizing: border-box  ;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+:root
+{
+  --perspective-blue: #3a4Ea2;
+  --article-accent: #005f69;
+  --discussion-accent: #5d6073;
+  --rebuttal-accent: #F07F66;
+  --ash-grey: #5d6073;
+  --darker-grey: #3a3b45;
+  --text-color: #f2f2f2;
+}
+
+p img {
+  margin: 0 auto;
+  max-height: 300px;
+  max-width: 100%;
+  display: block;
+}
+
+blockquote {
+  color: #585858;
+  background: pink;
+  /* border-top: 10px solid #e76bd2; */
+  /* margin: 1.5em 10px; */
+  /* padding: 0.5em 10px; */
+}
+
+/* blockquote:before {
+  color: #585858;
+  content: open-quote;
+  font-size: 4em;
+  line-height: 0.1em;
+  margin-right: 0.25em;
+  vertical-align: -0.4em;
+} */
+
+blockquote p {
+  display: inline;
+  margin-left: 50px;
+}
+
+.ql-editor{
+  background-color: white !important;
+}
+
+.ql-toolbar {
+  background-color: white !important;
+}
+
+html, body 
+{
+  background-color: #212120;
+}
+
+mwl-gauge {
+  width: 150px;
+  height: 150px;
+  display: block;
+  padding: 10px;
+}
+mwl-gauge > .gauge > .dial {
+  stroke: rgb(54, 57, 255);
+  stroke-width: 5;
+  fill: rgba(0, 0, 0, 0);
+}
+mwl-gauge > .gauge > .value {
+  stroke: rgb(255, 0, 0);
+  stroke-width: 5;
+  fill: rgba(0, 0, 0, 0);
+}
+mwl-gauge > .gauge > .value-text {
+  fill: rgb(172, 172, 172);
+  font-family: sans-serif;
+  font-weight: bold;
+  font-size: 1em;
+}
+.bipart{
+  width: 150px;
+  height: 150px;
+  display: block;
+  padding: 10px;
+}
+.bipart > .gauge > .dial {
+  stroke: rgb(255, 255, 255);
+  stroke-width: 5;
+  fill: rgba(0, 0, 0, 0);
+}
+.bipart > .gauge > .value {
+  stroke: rgb(66, 211, 61);
+  stroke-width: 5;
+  fill: rgba(0, 0, 0, 0);
+}
+.bipart > .gauge > .value-text {
+  fill: rgb(255, 255, 255);
+  font-family: sans-serif;
+  font-weight: bold;
+  font-size: 1.25em;
+}

@@ -1,0 +1,85 @@
+
+<app-navbar></app-navbar>
+
+<div *ngIf="!loading">
+  <!-- LEFT COLUMN -->
+    <div class="column left">
+        
+      <div class="username" (click)="RouteProfile()">
+        <div class="authorimg">
+          <img src="{{profile.profilePic}}">
+        </div>
+        <div class="authorinfo" *ngIf="user">
+          <ul>
+            <li><h3>{{user.displayName}}</h3></li>
+            <li><h6 style="opacity: .5;">@{{user.username}}</h6></li>
+          </ul>
+        </div>
+      </div>
+      <a type="button" (click)="Back()" class="back"><<</a>
+
+      <div id="comment-voteBtn" *ngIf="user_id">
+        <button class="fas fa-chevron-up" 
+          [ngClass]="{'agree' : agree, 'votebtn' : !agree}"
+          title="agree" 
+          (click)="agree ? RemoveInteraction(agree) : Interact(0)">
+        </button>
+        <button class="fas fa-chevron-down" 
+          [ngClass]="{'disagree' : disagree, 'votebtn' : !disagree}" 
+          title="disagree"
+          (click)="disagree ? RemoveInteraction(disagree) : Interact(1)">
+      </button>
+        <button class="far fa-lightbulb votebtn"
+          [ngClass]="{'thoughtful' : thoughtful,'votebtn' : !thoughtful}"
+          title="thoughtful"
+          (click)="thoughtful ? RemoveInteraction(thoughtful) : Interact(2)"></button>
+      </div>
+      <p id="numLikes">{{total_count}}</p>
+    </div>
+
+    <!-- POST CONTENT -->
+    <div class="column middle" >
+      <div class="postbanner"
+        style="background-image: url({{item.bannerImage}});"
+        *ngIf="item.bannerImage">
+      
+      </div>
+        <h1>{{item.title}}</h1>
+        <hr>
+
+      <!-- <app-postbody [innerHtml]="item.body | safeHtml"></app-postbody> -->
+        <div
+        #content [innerHTML]="item.body | safeHtml" id="text"></div>
+      <hr>
+      <app-reply-box
+        [item]="item">
+
+      </app-reply-box>
+
+      <!-- C-C-COMMENTS -->
+      <div class="comments">
+        <div id="comment-scroll" 
+            infiniteScroll 
+            [infiniteScrollDistance]="2" 
+            [infiniteScrollThrottle]="0" 
+            (scrolled)="OnScroll()">
+          <app-comment style="margin: 20px;"
+          *ngFor="let item of display_comments" 
+            [item] = "item"
+            [iteration]=0></app-comment>
+        </div>
+      </div>
+    </div>
+
+    <!-- RIGHT COLUMN -->
+    <div class="column right">
+      <!-- ad space here -->
+      <!-- <div style="background:#F1F6FB;border:#D6DFD8 2px solid;vertical-align:middle;text-align:center;width:160px;padding:78px 68px 78px 68px;color:#879F9F"><b>Advertise Here</b><br/>Size 300X250<br/>Mail Us<br/><span style="font-size:small">techprevue[at]yahoo.com</span></div> -->
+    </div>
+</div>
+<ngx-spinner
+            size = "default"
+            bdOpacity = 0.9
+            [fullScreen] = "true"
+            type = "ball-pulse-sync"
+          ></ngx-spinner>

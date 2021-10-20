@@ -1,0 +1,390 @@
+body,html {
+  font-family: "Roboto", sans-serif;
+  background-color: #0f123f !important;  
+}
+ 
+
+
+h2 {
+color: white;
+font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+} 
+
+#tone {
+  display:flex;
+  margin: 15px;
+}
+
+.testbannerimg {
+  width: 60vw;
+  height: 50vh;
+}
+
+.test {
+  padding-left: 10vw;
+}
+
+.radio {
+  position: relative;
+  cursor: pointer;
+  line-height: 20px;
+  font-size: 14px;
+  margin: 15px;
+}
+.radio .label {
+  position: relative;
+  display: block;
+  float: left;
+  margin-right: 10px;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #c8ccd4;
+  border-radius: 100%;
+  -webkit-tap-highlight-color: transparent;
+}
+.radio .label:after {
+  content: '';
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 10px;
+  height: 10px;
+  border-radius: 100%;
+  background: #225cff;
+  transform: scale(0);
+  transition: all 0.2s ease;
+  opacity: 0.08;
+  pointer-events: none;
+}
+.radio:hover .label:after {
+  transform: scale(3.6);
+}
+input[type="radio"]:checked + .label {
+  border-color: #225cff;
+}
+input[type="radio"]:checked + .label:after {
+  transform: scale(1);
+  transition: all 0.2s cubic-bezier(0.35, 0.9, 0.4, 0.9);
+  opacity: 1;
+}
+.cntr {
+  /* position: absolute; */
+  top: calc(50% - 10px);
+  left: 0;
+  width: 100%;
+  text-align: center;
+  color: white;
+}
+.hidden {
+  display: none;
+}
+.credit {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  transition: all 0.2s ease;
+  -webkit-user-select: none;
+  user-select: none;
+  opacity: 0.6;
+}
+.credit img {
+  width: 72px;
+}
+.credit:hover {
+  transform: scale(0.95);
+}
+
+/* //////////////////////////////////// */
+
+html {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    width: 100%;
+  }
+  
+  body {
+    margin: 5% auto 0 auto;
+    width: 90%;
+    max-width: 1125px;
+  }
+  
+  h1 {
+    font-size: 28px;
+    margin-bottom: 2.5%;
+    color: white;
+    font-weight: 700;
+  }
+  
+
+
+  input,
+  span,
+  label,
+  textarea {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    display: block;
+    margin: 10px;
+    padding: 5px;
+    border: none;
+    font-size: 22px;
+    color: white;
+  }
+
+  
+  textarea:focus,
+  input:focus {
+    outline: 0;
+  }
+  
+  /* centering form */
+  
+  /* Create three equal columns that floats next to each other */
+  .column {
+    float: left;
+    padding: 10px;
+  }
+  
+  .left, .right {
+    width: 20%;
+  }
+  
+  .middle {
+    width: 60%;
+  }
+  
+  /* Clear floats after the columns */
+  .row:after {
+    box-sizing: border-box;
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  /* Question */
+  input.question,
+  textarea.question {
+    font-size: 50px;
+    font-weight: 400;
+    border-radius: 2px;
+    margin: 0;
+    border: none;
+    width: 80%;
+    background: rgba(0, 0, 0, 0);
+    transition: padding-top 0.2s ease, margin-top 0.2s ease;
+    overflow-x: hidden; /* Hack to make "rows" attribute apply in Firefox. */
+  }
+  
+  /* Underline and Placeholder */
+  input.question + label,
+  textarea.question + label {
+    display: block;
+    position: relative;
+    white-space: nowrap;
+    padding: 0;
+    margin: 0;
+    width: 10%;
+    border-top: 1px solid white;
+    -webkit-transition: width 0.4s ease;
+    transition: width 0.4s ease;
+    height: 0px;
+  }
+  
+  input.question:focus + label,
+  textarea.question:focus + label {
+    width: 80%;
+  }
+  
+  input.question:focus,
+  input.question:valid {
+    padding-top: 35px;
+  }
+  
+  textarea.question:valid,
+  textarea.question:focus {
+    margin-top: 35px;
+  }
+  
+  input.question:focus + label > span,
+  input.question:valid + label > span {
+    top: -100px;
+    font-size: 22px;
+    color: white; 
+  }
+  
+  textarea.question:focus + label > span,
+  textarea.question:valid + label > span {
+    top: -180px;
+    font-size: 22px;
+    color: white;
+  }
+  
+  input.question:valid + label,
+  textarea.question:valid + label {
+    border-color: lightseagreen;
+  }
+  
+  input.question:invalid,
+  textarea.question:invalid {
+    box-shadow: none;
+  }
+  
+  input.question + label > span,
+  textarea.question + label > span {
+    font-weight: 300;
+    margin: 0;
+    position: absolute;
+    color: white;
+    font-size: 30px;
+    top: -66px;
+    left: 0px;
+    z-index: -1;
+    -webkit-transition: top 0.2s ease, font-size 0.2s ease, color 0.2s ease;
+    transition: top 0.2s ease, font-size 0.2s ease, color 0.2s ease;
+    z-index: auto;
+  }
+  
+  input[type="submit"] {
+    -webkit-transition: opacity 0.2s ease, background 0.2s ease;
+    transition: opacity 0.2s ease, background 0.2s ease;
+    display: block;
+    opacity: 1;
+    margin: 10px 0 0 0;
+    padding: 10px;
+    cursor: pointer;
+    background: transparent;
+    border-radius: 5px;
+  }
+  
+  input[type="submit"]:hover {
+    background: darkslategrey;
+    border-radius: 5px;
+  }
+  
+  input[type="submit"]:active {
+    background: #212120;
+    border-radius: 5px;
+  }
+  
+  /* input.question:valid ~ input[type="submit"], textarea.question:valid ~ input[type="submit"] {
+    -webkit-animation: appear 1s forwards;
+    animation: appear 1s forwards;
+  }
+  
+  input.question:invalid ~ input[type="submit"], 
+    textarea.question:invalid ~ input[type="submit"] {
+    display: none;
+  } */
+  
+  @-webkit-keyframes appear {
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes appear {
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  #inputtitlequestion {
+    margin: 30px;
+  }
+  
+  .custom-select{
+    margin-top: 20px;
+  }
+  
+  #TextArea {
+    overflow: hidden;
+    margin-top: 30px;
+    height:auto;
+    max-width:800px;
+    color:white;
+    /* font-weight:400; */
+    font-size:30px;
+    font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    width:100%;
+    background: inherit;
+    border-radius:3px;
+    line-height:2em;
+    border: 1px solid white;
+    padding: 25px;
+    /* box-shadow:0px 0px 5px 1px rgba(250,250,250,1); */
+    -webkit-transition: height 2s ease;
+  -moz-transition: height 2s ease;
+  -ms-transition: height 2s ease;
+  -o-transition: height 2s ease;
+  transition: height 2s ease;
+  }
+  
+  #wysiwygBtn {
+    border: none;
+    background:none;
+    color: white;
+    display: center;
+    height: 25px;
+    width: 25px;
+    padding: 4px;
+    margin: 5px;
+  }
+  
+  #wysiwygBtn:hover {
+    background: grey;
+  }
+  
+  #textbody {
+    color: white;
+    font-size: 30px;
+    max-width: 900px;
+  }
+  
+  
+  .wysiwyg {
+    border: solid 1px white;
+    padding: 15px;
+  }
+  
+  #textbody:focus{
+    border: none;
+    max-width: 900px;
+    outline: none;
+  }
+  
+  #editor {
+    /* width:70vw; */
+    height: 50vh;
+    margin: 2rem;
+    padding: 1rem;
+    font-size: 1.2rem;
+    box-shadow: 0 .1rem .4rem black;
+    border: 1px solid black;
+    overflow-y: auto;
+    max-width: 800px;
+  }
+  .bannerimg {
+  cursor: pointer;
+}
+
+.bannerimg:hover{
+-webkit-filter: brightness(60%);
+}
+
+.img__wrap {
+  position: relative;
+  height: 200px;
+  width: 257px;
+}
+
+.bannerimg__description {
+  /* position: ; */
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  color: #fff;
+  visibility: hidden;
+  opacity: 0;
+
+  /* transition effect. not necessary */
+  transition: opacity .2s, visibility .2s;
+}

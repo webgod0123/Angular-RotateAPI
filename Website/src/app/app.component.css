@@ -1,0 +1,40 @@
+/* .button {
+    display: block;
+    width: 100%;
+    border: none;
+    padding: 14px 50px;
+    font-size: 20px;
+    cursor: pointer;
+    text-align: center;
+    font-family:  'lato', sans-serif;
+  }
+
+  
+.column-left {
+  float: left;
+  width: 50%;
+}
+
+.column-right {
+  float: right;
+  width: 50%;
+  margin-top: 30%;
+}
+
+.header-center
+{
+    text-align: center;
+    
+}
+input.invalid
+{
+    border-color: red;
+}
+
+html, body 
+{
+  background-color: #212120 !important;
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; } */

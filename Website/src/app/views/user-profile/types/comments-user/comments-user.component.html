@@ -1,0 +1,9 @@
+<cdk-virtual-scroll-viewport itemSize="200"
+    infiniteScroll
+    [infiniteScrollThrottle] = "0"
+    (scrolled)="OnScroll()"
+    (scrolledIndexChange) = "OnScroll()">
+    <app-post-scroll
+        *ngFor="let item of comments"
+        [item]="item"></app-post-scroll>
+</cdk-virtual-scroll-viewport>

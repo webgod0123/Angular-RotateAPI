@@ -1,0 +1,28 @@
+<div *ngIf="!loading && user">
+
+  <app-article-page 
+    *ngIf="item.type == 'Article'"
+    [item]="item"
+    [user]="user"
+    [profile]="profile">
+  </app-article-page>
+
+  <app-discussion-page
+    *ngIf="item.type == 'Discussion'"
+    [item]="item"
+    [user]="user">
+  </app-discussion-page>
+
+  <app-comment-page 
+    *ngIf="item.type == 'Comment'"
+    [item]="item"
+    [iteration]="0"></app-comment-page>
+    
+  <app-rebuttal-page
+    *ngIf="item.type == 'Rebuttal'"
+    [item]="item"
+    [user]="user"></app-rebuttal-page>
+    <div *ngIf="!user_id">
+      <a routerLink="/landing">Go to the Login Page!</a>
+    </div>
+</div>

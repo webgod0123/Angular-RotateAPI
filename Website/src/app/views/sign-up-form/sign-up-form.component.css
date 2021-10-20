@@ -1,0 +1,75 @@
+*, ::before, ::after {
+    box-sizing: border-box;
+    font-family: 'Montserrat',;
+}
+
+button {
+    padding: 10px;
+    margin: 10px;
+}
+
+input {
+    background: transparent;
+    border: none;
+    border-bottom:2px solid grey;
+    transition: .2s ease-in-out;
+    font-size: 15px;
+}
+
+input:focus {
+    outline: none;
+    border-bottom: 2px solid #3a4ea2;
+}
+
+.section {
+    display: flex;
+    flex-direction: column;
+}
+
+.buttons {
+    display: flex;
+    justify-content: right;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    border-radius: 10px;
+    width: 40%;
+    height: auto;
+    background-color: #f3f3f3;
+    padding: 20px;
+
+}
+
+.user-box, .email-box, .phone-box, .pass-box {
+    margin: 5px;
+    display: flex;
+    flex-direction: column;
+}
+
+.user-box, .email-box, .phone-box, .pass-box label {
+    font-size: 20px;
+}
+
+
+
+.pass-box {
+    display: grid;
+    grid-template-columns: 4fr 1fr;
+    align-items: center;
+}
+
+
+.fa
+{
+    height: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

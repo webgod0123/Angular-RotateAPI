@@ -1,0 +1,101 @@
+
+<app-navbar></app-navbar>
+<!-- <p style="color: white;">home works!</p> -->
+<ngx-spinner
+    size = "default"
+    bdOpacity = 0.9
+    [fullScreen] = "true"
+    type = "ball-pulse-sync"
+></ngx-spinner>
+<div class="splitter">
+    <div>
+        <ul id="accordion" class="accordion">
+            <li>
+                <span>
+                    <div
+                        [ngClass]="{'home' : current_type ==0, 'link' :current_type != 0}"
+                        (click)="HomePostList(); ToggleHome();">
+                        <i class="fas fa-home fa-fw"></i>
+                        HOME
+                    </div>
+                </span>
+                <!-- <ul class="submenu" #submenu
+                    [style.height.px]="home_toggle ? submenu.scrollHeight : 0">
+                        <li>
+                            <a (click)="ToggleHome()">
+                                HOME
+                            </a>
+                        </li>
+                        <li>
+                            <a (click)="ToggleHome()">
+                                TRENDING
+                            </a>
+                        </li>
+                    </ul> -->
+            </li>
+            <li>
+                <span>
+                    <div 
+                        [ngClass]="{'article' : current_type == 1, 'link' :current_type != 1}"
+                        (click)="ArticlePostList()">
+                        <i class="fas fa-pen-square"></i>
+                        ARTICLE
+                    </div>
+                </span>
+            </li>
+            <li>
+                <div 
+                    [ngClass]="{'discussion' : current_type == 2, 'link' :current_type != 2}"
+                    (click)="DiscussionPostList()">
+                    <i class="fas fa-comments"></i>
+                    DISCUSSION
+                </div>
+                
+            </li>
+            <!-- <li>
+                <div 
+                    [ngClass]="{'rebuttal' : current_type == 3, 'link' :current_type != 3}"
+                    (click)="RebuttalsPostList()">
+                    <i class="fas fa-exclamation-circle"></i>
+                    REBUTTAL
+                </div>
+            </li> -->
+            <li *ngIf="display_topics_list[0] != null">
+                <div class="link"
+                    [ngClass]="{'topics open' : accordion , 'link' : !accordion}"
+                    (click)="ToggleAccordion()">
+                    <i class="fas fa-star"></i>
+                    FOLLOWED TOPICS
+                    
+                </div>
+                <ul class="submenu" #submenu
+                    [style.height.px]="accordion ? submenu.scrollHeight : 0">
+                        <li
+                            *ngFor="let topic of display_topics_list">
+                            <a routerLink="/discussion-hub/{{topic.topicID}}">
+                                {{topic.topicName}}
+                            </a>
+                        </li>
+                    </ul>
+            </li>
+        </ul>
+    </div>
+    <div class="box">
+        <cdk-virtual-scroll-viewport itemSize="200"
+            infiniteScroll
+            [infiniteScrollThrottle] = "0"
+            (scrolled)="OnScroll()" 
+            (scrolledIndexChange) = "OnScroll()"
+            class="row">
+            <div id="mainView">
+                <app-post-scroll
+                    class="post-scroll"
+                    *ngFor="let item of posts"
+                    [item]="item"
+                ></app-post-scroll>
+            </div>
+        </cdk-virtual-scroll-viewport>
+    </div>
+</div> 
+
+

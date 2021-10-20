@@ -1,0 +1,45 @@
+    <form class="needs-validation" novalidate #form="ngForm" (ngSubmit)="onSubmit()" *ngIf="change_pic">
+      <div class="form-group">
+          <div class="custom-file">
+            <input name="picture" type="file" class="custom-file-input" id="customFile"
+                  (change)="onFileChanged($event)" accept=".jpg,.png,.gif" >
+          </div>
+      </div>
+      <input type="submit" value="Submit" [disabled]="profileForm.invalid" class="btn btn-primary" />
+      </form>
+
+
+      <img class="bannerimg" *ngIf="pic" src= "{{pic}}" alt="profile picture" width="100%" height="250px" (click)="ToggleChangePic">
+      <div class="bannerimg__description">Change Image</div>
+
+<form (submit)="createPost()">
+  <div id="inputtitlequestion">
+    <input type="text" name="name" class="question" id="title" required autocomplete="off" />
+    <label for="title"><span>Title your piece!</span></label>
+  </div>
+
+  <div style="background: white;">
+    <quill-editor id="editor" class="content-editor" [placeholder]="''"> </quill-editor>
+    </div>
+    
+    
+
+<div id="tone"> 
+  <h2>Tone?</h2>
+  <app-test class="test" (newItemEvent)="addItem($event)"></app-test>
+</div>
+
+
+  <div class="custom-select" style="width:200px;" *ngIf="topics && t_names">
+    <select id="topic" required>
+      <option selected value="">Topic?</option>
+      <option 
+        *ngFor="let topic of topics"
+        value="{{topic}}">
+        {{t_names[topic - 1]}}
+      </option>
+    </select>
+  </div>
+
+  <input type="submit" value="Submit!" />
+</form>

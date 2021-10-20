@@ -1,0 +1,36 @@
+
+<!-- <div class="type">
+    <div class="container">
+        <div class="card">
+            <div class="banner"></div>
+            <div class="postinfo">
+                <div class="title"></div>
+                <div class="author"></div>
+            </div>
+        </div>
+        <div class="stamps"></div>
+    </div>
+</div> -->
+
+
+<div class="container"
+    style="background-image: linear-gradient(to top, rgba(0,0,0,60), rgba(0, 0, 0, 0)), 
+    url({{item.bannerImage}});"
+    [routerLink]="'/p/' + item.postID">
+    <div class="container__info">
+     <span class="badge hoverable">{{item.topicName}}</span>
+     <span class="badge hoverable">{{item.tone}}</span>
+     <span class="badge">{{date}}</span>
+     <div class="container__profile">
+         <img
+          [src]="item.profilePic"
+          alt="people"
+         />
+         <div class="container__profile__text">
+          <h2>{{item.title}}</h2>
+          <p>by <b>{{item.username}}</b></p>
+         </div>
+        </div>
+    </div>
+ 
+   </div>

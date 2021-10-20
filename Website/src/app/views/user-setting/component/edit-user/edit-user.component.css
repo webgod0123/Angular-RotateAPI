@@ -1,0 +1,27 @@
+*
+{
+    color: var(--text-color);
+}
+
+input, textarea
+{
+    color: var(--ash-grey);
+}
+#change_pic
+{
+    display: block;
+    padding: 37px;
+    font-size: 25px;
+    border: 0px;
+    background: none;
+    transition: 0.3s;
+}
+#change_pic:hover
+{
+    background-color: var(--ash-grey);
+}
+.main
+{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}

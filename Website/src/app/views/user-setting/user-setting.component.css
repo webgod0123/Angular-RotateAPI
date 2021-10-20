@@ -1,0 +1,53 @@
+.set {
+    color: white;
+    padding: -25% 0 0 10%;
+}
+
+h1 {
+    padding-left: 20%;
+    color: white;
+     
+}
+.wrapper
+  {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    
+  }
+
+.settings-list
+{
+  list-style:none;
+  margin-right: 5%;
+  
+  cursor: pointer;
+
+  text-transform: uppercase;
+  font-weight: 1000;
+  color: var(--text-color);
+  font-size: 35px;
+
+  text-align: center;
+}
+li
+{
+  padding: 20px;
+  transition: 0.3s;
+}
+.default
+{
+  background: var(--perspective-blue);
+}
+.default:hover
+{
+  background-color: var(--darker-grey);
+  color:var(--ash-grey);
+}
+.current
+{
+  background-color: var(--darker-grey);
+}
+.current:hover
+{
+  color:var(--ash-grey);
+}

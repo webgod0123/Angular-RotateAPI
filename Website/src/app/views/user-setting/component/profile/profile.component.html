@@ -1,0 +1,14 @@
+<form novalidate #form="ngForm" (ngSubmit)="Submit(form)" *ngIf="user && settings">
+  <div class="mb-3">
+    <label for="privateInput" class="form-label">Private?</label>
+    <input type="checkbox" class="check" 
+      name="private" #private="ngModel" [(ngModel)]="user.private">
+  </div>
+  <div class="mb-3">
+    <label for="bipart" class="form-label">Hide Bipartisanship?</label>
+    <input type="checkbox" class="check" 
+      name="bipart" #bipart="ngModel" [(ngModel)]="settings.hideBipartisan"
+      required>
+  </div>
+  <button type="submit" class="btn btn-primary" style="float: right">Submit</button>
+</form>

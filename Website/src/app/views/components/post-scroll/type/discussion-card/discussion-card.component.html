@@ -1,0 +1,28 @@
+<a routerLink="/p/{{item.postID}}">
+    <div class="blog-card">
+      <div class="meta">
+        <div class="photo" 
+            style="background-image: url({{image_url}})"></div>
+        <ul class="details">
+          <ng-container *ngIf="!loading"><li class="author"><a routerLink="{{router_url}}" >{{user.username}}</a></li></ng-container>
+          <li class="date">{{newDate}}</li>
+          <li class="tags">
+            <ul>
+              <li><a routerLink="/create-rebuttal/{{item.postID}}">Rebuttal</a></li>
+              <li *ngIf="topic != null"><a routerLink="/discussion-hub/{{topic.topicID}}">{{topic.topicName}}</a></li>
+              <li *ngIf="item.tone != null"><a href="#">{{item.tone}}</a></li>
+              <li><a href="#">CSS</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <div class="description">
+        <h1>{{item.title}}</h1>
+        <h2 routerLink="/u/{{user.username}}">from: {{user.username}}</h2>
+        <!-- <p class="bodytext">TEXT.</p> -->
+        <div class="bodytext" [innerHTML]="item.body"></div>
+        <div class="readmore">
+          <button class="readmoreBtn">Read More</button>
+        </div>
+      </div>
+    </div>

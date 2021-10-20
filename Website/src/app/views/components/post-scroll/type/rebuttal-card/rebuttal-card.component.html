@@ -1,0 +1,14 @@
+
+<div class="main-container">
+	<div class="cards">
+	  <div class="card card-1">
+		<div class="bodytext" [innerHTML]="item.body"></div>
+		<h2 class="card__title">{{item.title}}</h2>
+		<p class="card__apply">
+			<a class="tonebtn" *ngIf="item.tone != null">{{item.tone}}</a>
+			<a class="card__link" routerLink="/p/{{item.postID}}">Read More <i class="fas fa-arrow-right"></i></a>
+
+		</p>
+	  </div>
+	</div>
+  </div>

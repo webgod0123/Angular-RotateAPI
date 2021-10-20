@@ -1,0 +1,71 @@
+body {
+	margin: 0;
+	background: #1C1A30;
+	height: 100vh;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-align-items: center; 
+	align-items: center;
+  }
+  
+  .container {
+  display: flex;
+  align-items: center;
+   background-color: transparent;
+   border-radius: 5px;
+   width: 700px;
+   height: 150px;
+   color:#1C1A30;
+  }
+  
+  .card {
+	/* background:red; */
+	width: 700px;
+	cursor: pointer;
+	background-color: white;
+	padding-bottom: 10px;
+  }
+  
+  .image {
+	  height:90px;
+	  width:90px;
+	  border-radius: 50%;
+	  border: 5px solid white;
+	  padding: 50px;
+	  padding-top: 30px;
+	  background-size:cover;
+	  background-position:center;
+	  object-fit: cover;
+	  display: inline;
+	}
+  
+  .userinfo {
+	  display: flex;
+	  margin-left: 125px;
+	
+  }
+  
+  .names {
+	  display: flex;
+	  flex-direction: column;
+	  min-width: 100px;
+  
+  }
+  
+  .bio {
+	  display: flex;
+	  justify-content: center;
+	  margin-left: 15px;
+  
+  }
+  
+  .username {
+	  font-size: 20px;
+	  font-weight: 600;
+  
+  }
+  
+  .dispname {
+	  font-size: 12px;
+	  font-style: italic;
+  }

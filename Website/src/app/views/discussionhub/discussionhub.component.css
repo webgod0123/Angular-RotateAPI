@@ -1,0 +1,96 @@
+h1
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--text-color);
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 10px;
+}
+
+.list
+{
+  list-style: none;
+  columns: 3 800px;
+  column-gap: 0.5rem;
+  float: left;
+  padding-top: 0;
+}
+
+.shove
+{
+  margin-top: 2%;
+  display: grid;
+  grid-template-columns:1fr 4fr 1fr;
+}
+li
+{
+  scale: 0.8;
+}
+#follow-but
+{
+
+}
+.follow
+{
+  padding: 100px;
+  font-size: 30px;
+  font-weight: 600;
+  transition: 0.3s;
+  border-radius: 81px;
+  margin-right: 12px;
+  align-self: center;
+  border: 0;
+  border-radius: 10px;
+  background-color: var(--perspective-blue);
+  color: var(--text-color);
+  padding-left: 100px;
+  padding-right: 100px;
+  padding-top: 25px;
+  padding-bottom: 25px;
+}
+.follow:hover
+{
+    background-color: var(--darker-grey);
+    color: var(--ash-grey);
+}
+.follow:active
+{
+    background: none;
+    color: var(--text-color);
+}
+.unfollow
+{
+  padding-left: 100px;
+  padding-right: 100px;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  border-radius: 10px;
+  font-size: 30px;
+  font-weight: 600;
+  transition: 0.3s;
+  margin-right: 12px;
+  align-self: center;
+  background: none;
+  border: 2px solid var(--darker-grey);
+  color: var(--text-color);
+}
+.unfollow:hover
+{
+  color : var(--ash-grey);
+  background-color: var(--darker-grey);
+  border: 0;
+}
+.unfollow:hover span
+{
+    display: none;
+}
+.unfollow:hover:before
+{
+  content: "Unfollow?";
+}
+.unfollow:active
+{
+    color : var(--text-color)
+}

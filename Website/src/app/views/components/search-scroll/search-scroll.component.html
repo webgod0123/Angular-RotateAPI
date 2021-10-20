@@ -1,0 +1,19 @@
+
+    <div
+        *ngFor="let item of search_arr | filter:search"
+        class="padding">
+        <app-user-card
+            *ngIf="IsUserSearch(item)"
+            [item]="item">
+        </app-user-card>
+        <app-post-search-card
+            *ngIf="!IsUserSearch(item)"
+            [item]="item">
+        </app-post-search-card>
+    </div>
+<ngx-spinner
+    size = "default"
+    bdOpacity = 0.9
+    [fullScreen] = "true"
+    type = "ball-pulse-sync"
+></ngx-spinner>

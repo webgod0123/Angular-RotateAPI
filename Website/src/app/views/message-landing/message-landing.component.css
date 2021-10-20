@@ -1,0 +1,17 @@
+* {
+    display: flex;
+}
+
+
+body{
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+img {
+    margin: 20px;
+    height: 200px;
+    width: 200px;    
+}

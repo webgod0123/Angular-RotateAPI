@@ -1,0 +1,89 @@
+<div class="main">
+    
+    <div class="user" *ngIf="user && profile">
+        <form class="needs-validation" novalidate #form="ngForm" (ngSubmit)="SubmitUser(form)">
+            <input type="hidden" name="userId" [value]="user.userID"/>
+            <div class="mb-3">
+                <label for="UsernameInput" class="form-label">Username</label>
+                <input type="text" class="form-control"
+                  name="userName" #userName="ngModel" 
+                  [(ngModel)]="changeUser.username"
+                  maxlength="70" minlength="5"
+                  [class.invalid]="userName.invalid && userName.touched"
+                  placeholder="{{user.username}}">
+            </div>
+            <div class="mb-3">
+                <label for="DisplayNameInput" class="form-label">Display Name</label>
+                <input type="text" class="form-control"
+                  name="displayName" #displayName="ngModel" 
+                  [(ngModel)]="changeUser.displayName"
+                  maxlength="70" minlength="5"
+                  [class.invalid]="displayName.invalid && displayName.touched"
+                  placeholder="{{user.displayName}}">
+            </div>
+            <div class="mb-3">
+                <label for="PronounsInput" class="form-label">Pronouns</label>
+                <input type="text" class="form-control"
+                  name="pronouns" #pronouns="ngModel" 
+                  [(ngModel)]="changeProfile.pronouns"
+                  maxlength="70" minlength="4"
+                  [class.invalid]="pronouns.invalid && pronouns.touched"
+                  placeholder="{{profile.pronouns}}">
+            </div>
+            <div class="mb-3">
+                <label for="BioInput" class="form-label">Bio</label>
+                <textarea type="text" class="form-control"
+                  name="bio" #bio="ngModel" 
+                  [(ngModel)]="changeProfile.bio"
+                  maxlength="200" minlength="5"
+                  [class.invalid]="bio.invalid && bio.touched"
+                  placeholder="{{profile.bio}}"></textarea>
+            </div>
+            <div class="mb-3">
+                <label for="EmailInput" class="form-label">E-Mail</label>
+                <input type="email" class="form-control"
+                  name="email" #email="ngModel" 
+                  [(ngModel)]="changeUser.email"
+                  maxlength="70" minlength="5"
+                  [class.invalid]="email.invalid && email.touched"
+                  [email]="true"
+                  placeholder="{{user.email}}">
+            </div>
+            <div class="mb-3">
+                <div class="mb-3">
+                    <label for="PhoneNumberInput" class="form-label">Phone Number</label>
+                    <input type="text" class="form-control" 
+                      name="phoneNumber" #phoneNumber="ngModel" 
+                      [(ngModel)]="changeUser.phoneNumber"
+                      maxlength="11" minlength="11"
+                      [class.invalid]="phoneNumber.invalid && phoneNumber.touched"
+                      placeholder="{{user.phoneNumber}}">
+                </div>
+            </div>
+            <div class="mb-3">
+                <div class="mb-3">
+                    <label for="WebsiteInput" class="form-label">Website</label>
+                    <input type="text" class="form-control" 
+                      name="website" #website="ngModel" 
+                      [(ngModel)]="changeProfile.website"
+                      maxlength="70" minlength="4"
+                      [class.invalid]="website.invalid && website.touched"
+                      placeholder="{{profile.website}}">
+                </div>
+            </div>
+            <div class="mb-3">
+                <div class="mb-3">
+                    <label for="CountryInput" class="form-label">Country</label>
+                    <input type="text" class="form-control" 
+                      name="country" #country="ngModel" 
+                      [(ngModel)]="changeProfile.country"
+                      maxlength="70" minlength="3"
+                      [class.invalid]="country.invalid && country.touched"
+                      placeholder="{{profile.country}}">
+                </div>
+            </div>
+            <button class="btn btn-outline-secondary" (click)="Cancel(form)">Cancel</button> &nbsp;
+            <button type="submit" class="btn btn-primary" style="float: right" [disabled]="form.invalid || form.untouched || form.pristine">Submit</button>
+        </form>
+    </div>
+</div>

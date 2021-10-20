@@ -1,0 +1,32 @@
+ 
+    <div class="column left">
+        
+      <div class="username">
+        <div class="authorimg">
+        </div>
+        <div class="authorinfo" *ngIf="user">
+          <ul>
+            <li><h3>{{user.displayName}}</h3></li>
+            <li><h6 style="opacity: .5;">@{{user.username}}</h6></li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- POST CONTENT -->
+    <div class="column middle" >
+      <!-- <div class="postbanner"
+        style="background-image: url({{item.bannerImage}});"
+        *ngIf="item.bannerImage">
+      
+      </div> -->
+        <h1>{{title}}</h1>
+        <hr>
+        <div
+        #content [innerHTML]="body | safeHtml" id="text"></div>
+      <hr>
+    </div>
+
+    <div class="column right">
+    </div>

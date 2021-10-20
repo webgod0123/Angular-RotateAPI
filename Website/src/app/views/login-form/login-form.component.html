@@ -1,0 +1,54 @@
+
+
+
+
+    <div class="login-box">
+      <h2>Login</h2>
+      <p>All fields required</p>
+      <ng-container *ngIf="error!=null">
+        <p class="header-center" style="color: red">{{error.error.errors}}</p>
+      </ng-container>
+
+      <form novalidate #form="ngForm" (submit)="onSubmit(form)">
+        <input type="hidden" name="userId" [value]="service.formData.userID" />
+        
+        <div class="user-box">
+          <input name="Username" #userName="ngModel"
+          type="text"  
+           [(ngModel)]="service.formData.username"
+           required maxlength="70" minlength="5"
+           id="userName" aria-describedby="emailHelp"
+           required [class.invalid]="userName.invalid && userName.touched">
+          <label>Username</label>
+
+        </div>
+        <div class="user-box">
+          <input  type="{{show ? 'text' : 'password'}}" 
+          name="hash" #hash="ngModel" [(ngModel)]="service.formData.hash"
+          required  maxlength="70" minlength="8"
+          required [class.invalid]="hash.invalid && hash.touched"
+          id="password">
+          <span>
+            <i
+            class="fa"
+            [ngClass]="{
+              'fa-eye-slash': !show,
+              'fa-eye': show
+            }"
+            (click)="password()"
+          ></i>
+          </span>
+          <label>Password</label>
+        </div>
+        <button type="submit"  class="btn btn-primary button" id="submit" [disabled]=form.invalid>
+          Submit
+        </button>
+      </form>
+    </div>
+
+    <ngx-spinner
+    size = "default"
+    bdOpacity = 0.9
+    [fullScreen] = "true"
+    type = "ball-pulse-sync"
+    ></ngx-spinner>

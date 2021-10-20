@@ -1,0 +1,61 @@
+<div>
+    <div class="comment">
+      <div id="comment-left" >
+        <div id="comment-img" *ngIf="profile" (click)="RouteToProfile()"><img src="{{profile.profilePic}}"></div>
+        <div id="comment-voteBtn" *ngIf="user_id && item.userID != -1">
+          <button class="fas fa-chevron-up" 
+            [ngClass]="{'agree' : agree, 'votebtn' : !agree}"
+            title="agree" 
+            (click)="agree ? RemoveInteraction(agree) : Interact(0)">
+          </button>
+          <button class="fas fa-chevron-down" 
+            [ngClass]="{'disagree' : disagree, 'votebtn' : !disagree}" 
+            title="disagree"
+            (click)="disagree ? RemoveInteraction(disagree) : Interact(1)">
+        </button>
+          <button class="far fa-lightbulb votebtn"
+            [ngClass]="{'thoughtful' : thoughtful,'votebtn' : !thoughtful}"
+            title="thoughtful"
+            (click)="thoughtful ? RemoveInteraction(thoughtful) : Interact(2)"></button>
+        </div>
+        <p id="numLikes">{{item.userID != -1 ? total_count : 'N/A'}}</p>
+      </div>
+      <div id="comment-right">
+        <div id="comment-body" *ngIf="user">
+          <p id="author-name" (click)="RouteToProfile()">{{user.username}}</p>
+          <p id="comment-text">{{item.body}}</p>
+          
+        </div>
+        <button id="btn" type="button" class="reply-but" (click)="ReplyToggle()">Reply</button>
+        <div *ngIf="user">
+          <i class="fas fa-trash" 
+            *ngIf="user_id == user.userID"
+            (click)="DeletePost()"></i>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- reply button -->
+    <div *ngIf="reply" class="replytxtbx">
+        <app-reply-box
+          [item]="item">
+
+        </app-reply-box>
+    </div>
+    <div *ngIf="loading && iteration < 8">
+      <app-comment 
+          *ngFor="let item of display_comments"
+          [item] = "item"
+          [iteration]="iteration+1"
+          class="add">
+      </app-comment>
+      <!-- button to read more comments -->
+      <a id="read" (click)="DisplayComments(5)" *ngIf="comments.first != null">Read More</a>
+    </div>
+    <div *ngIf="iteration>=8 && comments.first != null">
+      <a id="cont" routerLink="/p/{{item.postID}}">Continue Thread...</a>
+    </div>
+</div>
+
+<app-footer></app-footer>

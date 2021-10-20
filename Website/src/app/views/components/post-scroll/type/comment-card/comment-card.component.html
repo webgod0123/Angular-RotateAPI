@@ -1,0 +1,62 @@
+<div class="container"
+    routerLink="/p/{{alpha_post ? alpha_post.postID : item.postID}}">
+    <div class="card" style="margin-top:10px;margin-bottom:10px">
+        <div class="card-header comment-header"
+            *ngIf="alpha_post && alpha_user && alpha_prof">
+            
+            <div class="top">
+                <img style="height:80px;width:80px;border-radius:50%" [src]="alpha_prof.profilePic">
+                <h1 class="post-title" *ngIf="alpha_post.title">
+                    {{alpha_post.title}}</h1>
+                <div *ngIf="!alpha_post.title">
+                    <p style="margin-left:10px;
+                        margin-top:-10px;color:rgb(202, 204, 206);font-weight: 600;font-size: 20px">{{alpha_user.displayName}} </p>
+                </div>
+                <small class="discussion" *ngIf="!alpha_post.title">@{{alpha_user.username}}</small>
+            </div>
+            
+            <p style="margin-left:80px;
+                 margin-top:-20px;color:rgb(202, 204, 206);" *ngIf="alpha_post.title">{{alpha_user.displayName}} <small style="color:#778899d8;">@{{alpha_user.username}}</small></p>
+            <button style="background-color:#454C65;border:none;border-radius:20px;float:right;margin-top:-10px" *ngIf="alpha_post.tone">
+                <h1 style="color:rgb(202, 204, 206);font-size:13px;">{{alpha_post.tone}}</h1>
+            </button>
+            <button style="background-color:#325269;border-radius:20px;border:none;float:right;margin-top:-10px" *ngIf="alpha_topic">
+                <h1 style="color:rgb(202, 204, 206);font-size:13px;">{{alpha_topic.topicName}}</h1>
+            </button>
+            <div style="color:lightslategray" class="body"
+                [innerHtml]="alpha_post.body">
+            </div>
+            <button
+                style="width:100%;background-color: transparent;border:none;color:rgb(202, 204, 206)">
+                _____________________________</button>
+        </div>
+        <div class="card-body comment-body" *ngIf="parent_post && parent_user && parent_prof">
+            <div class="top">
+                <img style="height:40px;width:40px;border-radius:50%" [src]="parent_prof.profilePic">
+                <h1 style="font-size:20px;margin-left:5px;display: inline-block;color:rgb(202, 204, 206)">
+                    {{parent_user.displayName}} <small style="color:#778899d8;font-size:13px">@{{parent_user.username}}</small></h1>
+            </div>
+            <div style="margin-left:40px;font-size:13px;
+               margin-top:-10px;color:rgb(202, 204, 206);"
+               [innerHtml]="parent_post.body">
+            </div>
+            <button
+                style="width:100%;background-color: transparent;border:none;color:rgb(202, 204, 206)">
+                _____________________________</button>
+        </div>
+        <div class="card-body comment-body" *ngIf="profile">
+            <div class="top">
+                <img style="height:40px;width:40px;border-radius:50%" [src]="profile.profilePic">
+                <h1 style="font-size:20px;margin-left:5px;display: inline-block;color:rgb(202, 204, 206)">
+                    {{user.displayName}} <small style="color:lightslategray;font-size:13px">@{{user.username}}</small></h1>
+            </div>
+            <div style="margin-left:40px;font-size:13px;
+               margin-top:-10px;color:rgb(202, 204, 206);"
+               [innerHtml]="item.body">
+            </div>
+            <button
+                style="width:100%;background-color: transparent;border:none;color:rgb(202, 204, 206);cursor: pointer;">
+                Open Discussion</button>
+        </div>
+    </div>
+</div>

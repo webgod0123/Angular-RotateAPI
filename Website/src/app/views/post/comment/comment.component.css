@@ -1,0 +1,378 @@
+
+  html {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    width: 100%;
+  }
+  
+  body {
+    margin: 5% auto 0 auto;
+    width: 90%;
+    max-width: 1125px;
+  }
+  
+  h1 {
+    font-size: 28px;
+    margin-bottom: 2.5%;
+    color: white;
+    font-weight: 700;
+  }
+  
+  p {
+    color: white;
+    display: inline;
+  }
+
+  input,
+  span,
+  label,
+  textarea {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    display: block;
+    margin: 10px;
+    padding: 5px;
+    border: none;
+    font-size: 22px;
+    color: white;
+  }
+  
+  textarea:focus,
+  input:focus {
+    outline: 0;
+  }
+  
+  /* centering form */
+  
+  /* Create three equal columns that floats next to each other */
+  .column {
+    float: left;
+    padding: 10px;
+  }
+  
+  .left, .right {
+    width: 20%;
+  }
+  
+  .middle {
+    width: 60%;
+  }
+  
+  /* Clear floats after the columns */
+  .row:after {
+    box-sizing: border-box;
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  /* Question */
+  input.question,
+  textarea.question {
+    font-size: 18px;
+    font-weight: 300;
+    border-radius: 2px;
+    margin: 0;
+    border: none;
+    width: 100%;
+    background: rgba(0, 0, 0, 0);
+    transition: padding-top 0.2s ease, margin-top 0.2s ease;
+    overflow-x: hidden; /* Hack to make "rows" attribute apply in Firefox. */
+  }
+  
+  /* Underline and Placeholder */
+  input.question + label,
+  textarea.question + label {
+    display: block;
+    position: relative;
+    white-space: nowrap;
+    padding: 0;
+    margin: 0;
+    width: 10%;
+    border-top: 1px solid white;
+    -webkit-transition: width 0.4s ease;
+    transition: width 0.4s ease;
+    height: 0px;
+  }
+  
+  input.question:focus + label,
+  textarea.question:focus + label {
+    width: 100%;
+  }
+  
+  input.question:focus,
+  input.question:valid {
+    padding-top: 35px;
+  }
+  
+  textarea.question:valid,
+  textarea.question:focus {
+    margin-top: 110px;
+  }
+  
+  input.question:focus + label > span,
+  input.question:valid + label > span {
+    top: -100px;
+    font-size: 22px;
+    color: white;
+  }
+  
+  textarea.question:focus + label > span,
+  textarea.question:valid + label > span {
+    top: -180px;
+    font-size: 22px;
+    color: white;
+  }
+  
+  input.question:valid + label,
+  textarea.question:valid + label {
+    border-color: lightseagreen;
+  }
+  
+  input.question:invalid,
+  textarea.question:invalid {
+    box-shadow: none;
+  }
+  
+  input.question + label > span,
+  textarea.question + label > span {
+    font-weight: 300;
+    margin: 0;
+    position: absolute;
+    color: white;
+    font-size: 22px;
+    top: -66px;
+    left: 0px;
+    z-index: -1;
+    -webkit-transition: top 0.2s ease, font-size 0.2s ease, color 0.2s ease;
+    transition: top 0.2s ease, font-size 0.2s ease, color 0.2s ease;
+    z-index: auto;
+  }
+  
+  input[type="submit"] {
+    -webkit-transition: opacity 0.2s ease, background 0.2s ease;
+    transition: opacity 0.2s ease, background 0.2s ease;
+    display: block;
+    opacity: 0;
+    margin: 10px 0 0 0;
+    padding: 10px;
+    cursor: pointer;
+    background: #212120;
+    border-radius: 5px;
+  }
+  
+  input[type="submit"]:hover {
+    background: darkslategrey;
+    border-radius: 5px;
+  }
+  
+  input[type="submit"]:active {
+    background: #212120;
+  }
+  
+  input.question:valid ~ input[type="submit"], 
+  textarea.question:valid ~ input[type="submit"] {
+    -webkit-animation: appear 1s forwards;
+    animation: appear 1s forwards;
+  }
+  
+  input.question:invalid ~ input[type="submit"], 
+    textarea.question:invalid ~ input[type="submit"] {
+    display: none;
+  }
+  
+  @-webkit-keyframes appear {
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes appear {
+    100% {
+      opacity: 1;
+    }
+  }
+
+  .replytxtbx {
+    padding: 20px;
+  }
+
+  .reply-but
+  {
+      float: right;
+      padding: auto;
+  }
+  .add
+  {
+      display: block;
+      margin-left: 50px;
+  }
+
+  .comment 
+  {
+      display: grid;
+      width: auto;
+      height: auto;
+      padding-top: 15px;
+      padding-left: 15px;
+      border-left: solid 1px white;
+      grid-template-columns: 1fr 5fr;
+    }
+
+  #numLikes {
+    display: flex;
+    justify-content: center;
+  }
+  #comment-img {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    cursor: pointer;
+  }
+
+  #comment-img img {
+    width: 75px;
+    height: 75px;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+
+  #comment-voteBtn {
+    display: flex;
+    justify-content: center;
+  }
+
+  #comment-body {
+    flex-grow: 4;
+  }
+  
+  #author-name {
+    padding-right: 5px;
+    color: #f2f2f2;
+    font-size: 18px;
+  }
+
+  #author-name:hover {
+    text-decoration: underline;
+    cursor: pointer;
+  }
+
+  #comment-text{
+    color: #f2f2f2;
+    font-weight: 150;
+  }
+
+  #comment-interact {
+    display: flex;
+    justify-content: right;
+  }
+  .thoughtful
+  {
+    background-color: rgb(255, 255, 115);
+    color: var(--ash-grey);
+    transition: 0.2s ease-in-out;
+    height: 50px;
+    padding: 5px;
+    margin: 5px;
+    height: 30px;
+    width: 30px;
+    border: none;
+    border-radius: 5px;
+  }
+  .agree
+  {
+    background-color: rgb(132, 185, 52);
+    color: white;
+    transition: 0.2s ease-in-out;
+    height: 50px;
+    padding: 5px;
+    margin: 5px;
+    height: 30px;
+    width: 30px;
+    border: none;
+    border-radius: 5px;
+  }
+  .disagree
+  {
+    background-color: red;
+    color: white;
+    transition: 0.2s ease-in-out;
+    height: 50px;
+    padding: 5px;
+    margin: 5px;
+    height: 30px;
+    width: 30px;
+    border: none;
+    border-radius: 5px;
+  }
+  .votebtn {
+    border: none;
+    border-radius: 5px;
+    background: none;
+    color: white;
+    transition: 0.2s ease-in-out;
+    height: 50px;
+    padding: 5px;
+    margin: 5px;
+    height: 30px;
+    width: 30px;
+  }
+
+  .votebtn:hover, .disagree:hover, .agree:hover, .thoughtful:hover{
+    background-color: white;
+    color: #212120;
+    transition: 0.2s ease-in-out;
+  }
+
+
+  #btn {
+    border: none;
+    border-radius: 5px;
+    background: none;
+    color: white;
+    transition: 0.2s ease-in-out;
+    height: 50px;
+    padding: 5px;
+    margin: 5px;
+    height: auto;
+    width: auto;
+  }
+
+  #btn:hover{
+    background-color: white;
+    color: #212120;
+    transition: 0.2s ease-in-out;
+  }
+
+  /* Read More and Continue Thread */
+  a
+  {
+    text-decoration: none;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+  }
+  #read
+  {
+    color: var(--text-color);
+    cursor: pointer;
+  }
+  #read:hover
+  {
+    color: var(--ash-grey);
+  }
+  #read:active
+  {
+    color: var(--perspective-blue);
+  }
+
+  #cont
+  {
+    color: var(--text-color);
+  }
+  #cont:hover
+  {
+    color: var(--ash-grey);
+  }
+  #cont:active
+  {
+    color: var(--perspective-blue);
+  }

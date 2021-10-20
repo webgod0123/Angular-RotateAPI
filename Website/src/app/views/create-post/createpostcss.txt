@@ -1,0 +1,347 @@
+
+
+html {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  width: 100%;
+}
+
+body {
+  margin: 5% auto 0 auto;
+  width: 90%;
+  max-width: 1125px;
+  background: #212120;
+}
+
+h1 {
+  margin-top: 30px;
+  font-size: 28px;
+  margin-bottom: 2.5%;
+  color: white;
+  font-weight: 700;
+}
+
+input,
+span,
+label,
+textarea {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  display: block;
+  margin: 10px;
+  padding: 5px;
+  border: none;
+  font-size: 22px;
+  color: white;
+}
+
+.scene {
+  width: 100vw;
+  height: 100vh;
+  background-color: #212120;
+  -webkit-transition: all .3s ease-in-out;
+  -moz-transition:    all .3s ease-in-out;
+  -o-transition:      all .3s ease-in-out;
+  -ms-transition:     all .3s ease-in-out;
+  transition:         all .3s ease-in-out;
+}
+
+.toggleBtns {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.btn {
+	border: none;
+	font-family: inherit;
+	font-size: inherit;
+	color: inherit;
+	background: transparent;
+	cursor: pointer;
+	padding: 25px 80px;
+	display: inline-block;
+	margin: 15px 30px;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	font-weight: 700;
+	outline: none;
+	position: relative;
+	-webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+	transition: all 0.3s;
+}
+
+.btn:after {
+	content: '';
+	position: absolute;
+	z-index: -1;
+	-webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+	transition: all 0.3s;
+}
+
+.btn:before {
+	font-family: 'icomoon';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+	position: relative;
+	-webkit-font-smoothing: antialiased;
+}
+
+.btn-1 {
+	border: 3px solid #fff;
+	color: #fff;
+}
+
+.btn-1e {
+	overflow: hidden;
+}
+
+.btn-1e:after {
+	width: 100%;
+	height: 0;
+	top: 50%;
+	left: 50%;
+	background: #fff;
+	opacity: 0;
+	-webkit-transform: translateX(-50%) translateY(-50%) rotate(45deg);
+	-moz-transform: translateX(-50%) translateY(-50%) rotate(45deg);
+	-ms-transform: translateX(-50%) translateY(-50%) rotate(45deg);
+	transform: translateX(-50%) translateY(-50%) rotate(45deg);
+  /* z-index: 0;  */
+}
+
+.btn-1e:hover,
+.btn-1e:active {
+	color: #212120;
+  z-index: 1;
+}
+
+.btn-1e:hover:after {
+	height: 260%;
+	opacity: 1;
+}
+
+.btn-1e:active:after {
+	height: 400%;
+	opacity: 1;
+}
+
+/* centering form */
+
+/* Create three equal columns that floats next to each other */
+.column {
+  float: left;
+  padding: 10px;
+}
+
+.left, .right {
+  width: 20%;
+}
+
+.middle {
+  width: 60%;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  box-sizing: border-box;
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Question */
+input.question,
+textarea.question {
+  font-size: 50px;
+  font-weight: 400;
+  border-radius: 2px;
+  margin: 0;
+  border: none;
+  width: 80%;
+  background: rgba(0, 0, 0, 0);
+  transition: padding-top 0.2s ease, margin-top 0.2s ease;
+  overflow-x: hidden; /* Hack to make "rows" attribute apply in Firefox. */
+}
+
+/* Underline and Placeholder */
+input.question + label,
+textarea.question + label {
+  display: block;
+  position: relative;
+  white-space: nowrap;
+  padding: 0;
+  margin: 0;
+  width: 10%;
+  border-top: 1px solid white;
+  -webkit-transition: width 0.4s ease;
+  transition: width 0.4s ease;
+  height: 0px;
+}
+
+input.question:focus + label,
+textarea.question:focus + label {
+  width: 80%;
+}
+
+input.question:focus,
+input.question:valid {
+  padding-top: 35px;
+}
+
+textarea.question:valid,
+textarea.question:focus {
+  margin-top: 35px;
+}
+
+input.question:focus + label > span,
+input.question:valid + label > span {
+  top: -100px;
+  font-size: 22px;
+  color: white; 
+}
+
+textarea.question:focus + label > span,
+textarea.question:valid + label > span {
+  top: -180px;
+  font-size: 22px;
+  color: white;
+}
+
+input.question:valid + label,
+textarea.question:valid + label {
+  border-color: lightseagreen;
+}
+
+input.question:invalid,
+textarea.question:invalid {
+  box-shadow: none;
+}
+
+input.question + label > span,
+textarea.question + label > span {
+  font-weight: 300;
+  margin: 0;
+  position: absolute;
+  color: white;
+  font-size: 30px;
+  top: -66px;
+  left: 0px;
+  z-index: -1;
+  -webkit-transition: top 0.2s ease, font-size 0.2s ease, color 0.2s ease;
+  transition: top 0.2s ease, font-size 0.2s ease, color 0.2s ease;
+  z-index: auto;
+}
+
+input[type="submit"] {
+  -webkit-transition: opacity 0.2s ease, background 0.2s ease;
+  transition: opacity 0.2s ease, background 0.2s ease;
+  display: block;
+  opacity: 1;
+  margin: 10px 0 0 0;
+  padding: 10px;
+  cursor: pointer;
+  background: #212120;
+  border-radius: 5px;
+}
+
+input[type="submit"]:hover {
+  background: darkslategrey;
+  border-radius: 5px;
+}
+
+input[type="submit"]:active {
+  background: #212120;
+  border-radius: 5px;
+}
+
+/* input.question:valid ~ input[type="submit"], textarea.question:valid ~ input[type="submit"] {
+  -webkit-animation: appear 1s forwards;
+  animation: appear 1s forwards;
+}
+
+input.question:invalid ~ input[type="submit"], 
+  textarea.question:invalid ~ input[type="submit"] {
+  display: none;
+} */
+
+@-webkit-keyframes appear {
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes appear {
+  100% {
+    opacity: 1;
+  }
+}
+
+#inputtitlequestion {
+  margin: 30px;
+}
+
+.custom-select{
+  margin-top: 20px;
+  display: inline;
+}
+
+#TextArea {
+  overflow: hidden;
+  margin-top: 30px;
+  height:auto;
+  max-width:800px;
+  color:white;
+  /* font-weight:400; */
+  font-size:30px;
+  font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  width:100%;
+  background: inherit;
+  border-radius:3px;
+  line-height:2em;
+  border: 1px solid white;
+  padding: 25px;
+  /* box-shadow:0px 0px 5px 1px rgba(250,250,250,1); */
+  -webkit-transition: height 2s ease;
+-moz-transition: height 2s ease;
+-ms-transition: height 2s ease;
+-o-transition: height 2s ease;
+transition: height 2s ease;
+}
+
+#wysiwygBtn {
+  border: none;
+  background:none;
+  color: white;
+  display: center;
+  height: 25px;
+  width: 25px;
+  padding: 4px;
+  margin: 5px;
+}
+
+#wysiwygBtn:hover {
+  background: grey;
+}
+
+#textbody {
+  color: white;
+  font-size: 30px;
+  max-width: 900px;
+}
+
+
+.wysiwyg {
+  border: solid 1px white;
+  padding: 15px;
+}
+
+#textbody:focus{
+  border: none;
+  max-width: 900px;
+  outline: none;
+}
+

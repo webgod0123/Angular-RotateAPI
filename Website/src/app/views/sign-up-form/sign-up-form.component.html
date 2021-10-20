@@ -1,0 +1,152 @@
+<div class="center">
+<div class="container">
+      <div>
+        <form novalidate #form="ngForm" (submit)="onSubmit(form)">
+
+          <input type="hidden" name="userId" [value]="service.formData.userID"/>
+            <h1>Welcome!</h1>
+            <h4>Lets create your account!</h4>
+
+            <ng-container *ngIf="error!=null">
+              <p style="color: red">{{error.error.errors}}</p>
+            </ng-container>
+
+            <!-- Username -->
+            <div class="user-box">
+              <label for="UsernameInput" >Username</label>
+              <input type="text" 
+                name="userName" #userName="ngModel" 
+                [(ngModel)]="service.formData.username"
+                required maxlength="70" minlength="5"
+                required [class.invalid]="userName.invalid && userName.touched">
+            </div>
+
+            <!-- Email Address -->
+            <div class="email-box">
+                <label for="exampleInputEmail1">Email address</label>
+                <input type="email" id="exampleInputEmail1" 
+                  name="email" #email="ngModel" [(ngModel)]="service.formData.email"
+                  required  maxlength="70" minlength="10"
+                  required [class.invalid]="email.invalid && email.touched"
+                  [email]="true">
+                <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+            </div>
+
+            
+            <!-- Phone Number -->
+            <div class="phone-box">
+                <label for="PhoneNumberInput" >Phone Number</label>
+                <input type="text" 
+                  name="phoneNumber" #phoneNumber="ngModel" 
+                  [(ngModel)]="service.formData.phoneNumber"
+                  required maxlength="11" minlength="11"
+                  required [class.invalid]="phoneNumber.invalid && phoneNumber.touched">
+            </div>
+
+
+              <!-- Password -->
+              <div class="pass-box">
+              <div>
+                <label>Password</label>
+                <div>
+                  <input type="{{show ? 'text' : 'password'}}" 
+                  name="hash" #hash="ngModel" [(ngModel)]="service.formData.hash"
+                  required  maxlength="70" minlength="8"
+                  required [class.invalid]="hash.invalid && hash.touched"
+                  id="password">
+                </div>
+              </div>
+              <div>
+                <span>
+                  <i
+                  class="fa"
+                  [ngClass]="{
+                    'fa-eye-slash': !show,
+                    'fa-eye': show
+                  }" (click)="password()"></i>
+                </span>
+             </div>
+            </div>
+
+              <!-- password 2 -->
+              <div class="pass-box">
+              <div >
+                <label>Password</label>
+                <div>
+                  <input type="{{show ? 'text' : 'password'}}"
+                  name="hashCon" #hashCon="ngModel" [(ngModel)]="confirm"
+                  required  maxlength="70" minlength="8"
+                  required [class.invalid]="hashCon.invalid && hashCon.touched"
+                  id="password">
+
+                </div>
+              </div>
+              <div>
+                <span>
+                  <i
+                  class="fa"
+                  [ngClass]="{
+                    'fa-eye-slash': !show,
+                    'fa-eye': show
+                  }"
+                  (click)="password()"
+                ></i>
+                </span>
+             </div>
+            </div>
+
+          <div class="buttons">
+            <button type="button" routerLink="/landing">Cancel</button> &nbsp;
+            <button type="submit" style="float: right" [disabled]="form.invalid">Submit</button>
+          </div>
+          </form>
+      </div>
+  </div>
+</div>
+
+<!-- 
+<form novalidate #form="ngForm" (submit)="onSubmit(form)">
+    <input type="hidden" name="userId"
+    [value]="service.formData.userId" />
+
+    <div class="form-group">
+        <label>USERNAME</label>
+        <input class="form-control form-control-lg"
+        name="userName" #userName="ngModel" [(ngModel)]="service.formData.userName"
+        required maxlength="70" minlength="5"
+        required [class.invalid]="userName.invalid && userName.touched">
+    </div>
+    <div class="form-group">
+        <label>PASSWORD</label>
+        <input class="form-control form-control-lg"
+        name="hash" #hash="ngModel" [(ngModel)]="service.formData.hash"
+        required  maxlength="70" minlength="8"
+        required [class.invalid]="hash.invalid && hash.touched">
+    </div>
+    <div class="form-group">
+        <label>PHONE NUMBER</label>
+        <input class="form-control form-control-lg"
+        name="phoneNumber" #phoneNumber="ngModel" [(ngModel)]="service.formData.phoneNumber"
+        required maxlength="11" minlength="11"
+        required [class.invalid]="phoneNumber.invalid && phoneNumber.touched">
+    </div>
+    <div class="form-group">
+        <label>email</label>
+        <input class="form-control form-control-lg"
+        name="email" #email="ngModel" [(ngModel)]="service.formData.email"
+        required  maxlength="70" minlength="10"
+        required [class.invalid]="email.invalid && email.touched">
+    </div>
+    <div class="form-group"> 
+        
+        <button class="button btn btn-info btn-lg btn-block" type="submit" [disabled]="form.invalid">SUBMIT</button>
+    </div>
+</form>
+</div> -->
+
+<ngx-spinner
+size = "default"
+bdOpacity = 0.9
+[fullScreen] = "true"
+type = "ball-pulse-sync"
+></ngx-spinner>

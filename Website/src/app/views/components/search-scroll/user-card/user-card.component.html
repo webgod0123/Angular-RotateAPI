@@ -1,0 +1,18 @@
+
+<div class="container">
+  <div class="card" [routerLink]="router_url">
+      <div>
+          <!-- emptydiv -->
+      </div>
+      <div class="image"
+        style="background-image: url({{item.profilePic}})"></div>
+      <div class="userinfo">
+          <div class="names">
+              <div class="username">{{item.displayName}}</div>
+              <div class="dispname">@{{item.username}}</div>
+          </div>
+          <div class="bio">{{item.bio}}</div>
+      </div>
+  </div>
+
+</div>
